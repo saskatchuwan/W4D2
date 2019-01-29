@@ -13,7 +13,7 @@
 #
 
 class Cat < ApplicationRecord
-  COLORS = %w(blue red yellow green brown lilac pokadot)
+  COLORS = %w(blue red yellow green brown lilac polkadot)
   GENDER = %w(M F)
 
   validates :birth_date, :name, presence: true

@@ -1,0 +1,57 @@
+<h2>Kitty Spotlight! Prrrrrr</h2>
+
+<!-- <ul>
+  <li>Name: <%#= @cat.name %></li>
+  <ul>
+    <li>Birthday:
+      <%#= @cat.birth_date %>
+    </li>
+
+    <li>Sex:
+      <%#= @cat.sex %>
+    </li>
+
+    <li>Age:
+      <%#= @cat.age %>
+    </li>
+    
+    <li>Color:
+    <%#= @cat.color %>
+    </li>
+
+    <li>Description:
+    <%#= @cat.description %>
+    </li>
+
+  </ul>
+</ul> -->
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"><%= @cat.name %>'s vital info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Birthday</td>
+            <td><%= @cat.birth_date %></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><%= @cat.age %></td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td><%= @cat.color %></td>
+        </tr>
+        <tr>
+            <td>Sex</td>
+            <td><%= @cat.sex %></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><%= @cat.description %></td>
+        </tr>
+    </tbody>
+</table>
