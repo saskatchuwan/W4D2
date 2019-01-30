@@ -1,0 +1,54 @@
+<!-- Things to update 
+1. form action (cat_url, cats_url)
+2. input type hidden
+3. radio input ternary if clause
+4. submit value
+5. change instance var to local var
+-->
+
+<form method='post' action='<%= (type == :new) ? cats_url : cat_url %>'>  
+  <% if type == :edit %>
+    <input type='hidden' name='_method' value='patch'>
+  <% end %>
+
+  <label for='name'>Name:</label>
+  <input id='name' name='cat[name]' type='text' value='<%= cat.name %>'>
+  <br>
+  <br>
+  
+  <label for='Sex'>Sex:</label>
+  <label>Female
+    <input type='radio' name='cat[sex]' value='F' <%= (cat.sex == 'F') ? 'checked' : "" %>>
+  </label>
+  <label>Male
+    <input type='radio' name='cat[sex]' value='M' <%= (cat.sex == 'M') ? 'checked' : "" %>>
+  </label>
+  <br>
+  <br>
+  <label for='Color'>Color:
+    <select name='cat[color]'>
+      <option disabled <%= (cat.color.nil?) ? 'selected' : "" %>>--Please Select--</option>
+      <option value='blue' <%= (cat.color == 'blue') ? 'selected' : "" %>>blue</option>
+      <option value='red' <%= (cat.color == 'red') ? 'selected' : "" %>>red</option>
+      <option value='yellow' <%= (cat.color == 'yellow') ? 'selected' : "" %>>yellow</option>
+      <option value='green' <%= (cat.color == 'green') ? 'selected' : "" %>>green</option>
+      <option value='brown' <%= (cat.color == 'brown') ? 'selected' : "" %>>brown</option>
+      <option value='lilac' <%= (cat.color == 'lilac') ? 'selected' : "" %>>lilac</option>
+      <option value='polkadot' <%= (cat.color == 'polkadot') ? 'selected' : "" %>>polkadot</option>
+    </select>
+  </label>
+  <br>
+  <br>
+  <label for='Birthday'>Birthday:
+    <input type='date' name='cat[birth_date]' value='<%= cat.birth_date %>'>
+  </label>
+  <br>
+  <br>
+  <label for='Description'>Description:
+    <textarea name='cat[description]'><%= cat.description ? cat.description : 'My kat...' %>
+    </textarea>
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="<%= (type == :edit) ? 'Update this Kitty' : 'Kreate this Kitty' %>">
+</form>
